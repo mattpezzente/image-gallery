@@ -21,4 +21,4 @@ clone https://github.com/salogost/image-gallery.git
 To install all npm packages, install npm and enter the following:
 ```
 npm install
-```'
+```
