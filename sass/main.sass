@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Patua+One')
+
+
 @import partials/_reset
 
 @import modules/_utility
@@ -7,7 +10,10 @@
 @import partials/_gallery
 
 $max-width: 1000px
-$base-content-size: 1rem
+$base-content-size: 1.1rem
+
+$header-font: 'Patua One', cursive;
+$content-font: 'Lato', sans-serif
 
 @mixin animate($name, $duration, $iteration, $direction)
 	animation-duration: $duration
@@ -60,6 +66,11 @@ header, footer
 		width: 7.5rem
 		font-size: $base-content-size + 1rem
 
+
+h1, h2, h3, blockquote
+	font-family: $header-font
+
+
 h1
 	margin-bottom: 1rem
 	font-size: $base-content-size + 0.5rem
@@ -78,6 +89,12 @@ blockquote
 		padding: 0
 		font-size: $base-content-size + 0.5rem
 
+h3
+	font-size: $base-content-size + 0.25rem
+
+p
+	font-family: $content-font
+	font-size: $base-content-size
 
 section
 	padding: 1rem 0
@@ -87,16 +104,17 @@ section
 	display: flex
 	flex-direction: row
 	flex-wrap: wrap
-	justify-content: center
+	justify-content: space-around
 	align-items: center
 	max-width: $max-width
 
 	li
+		position: relative
 		overflow: hidden
+		margin-bottom: 2rem
 		text-align: center
 		opacity: 1
-		padding-top: 1rem
-		padding-left: 1rem
+		padding: 1rem
 		width: calc(100% - 2rem)
 		transition: 0.2s
 		max-height: 20rem
@@ -107,6 +125,7 @@ section
 
 	img
 		position: relative
+		right: 50%
 		width: 200%
 
 	.li-show
@@ -114,14 +133,41 @@ section
 		opacity: 1
 
 	.li-hover:hover
-		padding-top: 0.5rem
-		padding-left: 0.5rem
-		margin-right: -0.5rem
-		margin-bottom: -0.5rem
-		width: calc(100% - 1.5rem)
+		padding: 0
+		margin: 0
+		margin-left: -0.25rem
+		margin-top: -0.5rem
+		max-height: 21rem
+		width: calc(100%)
 		@include responsive(tablet)
-			width: calc(100%/2 - 1.5rem)
+			width: calc(100%/2)
 		@include responsive(desktop)
-			width: calc(100%/3 - 1.5rem)
+			width: calc(100%/3)
+			
+			.img-desc
+				top: 80%
+
+	.img-desc
+		color: white
+		text-align: left
+		position: absolute
+		padding: 0.25rem 0.5rem
+		width: 100%
+		height: 5rem
+		top: 100%
+		left: 0
+		background: rgba(0,0,0,0.8)
+		transition: 0.3s
+
+	.img-title
+		margin-bottom: 0.5rem
+
+	.img-likes
+		display: inline-block
+		background: #222
+		padding: 0.25rem 0.75rem
+		border-radius: 0.25rem
+		border: 0.05rem solid #ccc
+
 		
  

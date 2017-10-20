@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Lato|Patua+One");
 @import url("https://fonts.googleapis.com/css?family=Roboto|Merriweather");
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
@@ -129,29 +130,39 @@ header, footer {
   @media (min-width: 1000px) {
     .globe {
       width: 7.5rem;
-      font-size: 2rem; } }
+      font-size: 2.1rem; } }
+
+h1, h2, h3, blockquote {
+  font-family: "Patua One", cursive; }
 
 h1 {
   margin-bottom: 1rem;
-  font-size: 1.5rem; }
+  font-size: 1.6rem; }
   @media (min-width: 625px) {
     h1 {
-      font-size: 1.75rem; } }
+      font-size: 1.85rem; } }
   @media (min-width: 1000px) {
     h1 {
-      font-size: 2rem; } }
+      font-size: 2.1rem; } }
 
 blockquote {
   padding: 0 0.5rem;
-  font-size: 1rem; }
+  font-size: 1.1rem; }
   @media (min-width: 625px) {
     blockquote {
       padding: 0;
-      font-size: 1.25rem; } }
+      font-size: 1.35rem; } }
   @media (min-width: 1000px) {
     blockquote {
       padding: 0;
-      font-size: 1.5rem; } }
+      font-size: 1.6rem; } }
+
+h3 {
+  font-size: 1.35rem; }
+
+p {
+  font-family: "Lato", sans-serif;
+  font-size: 1.1rem; }
 
 section {
   padding: 1rem 0; }
@@ -166,19 +177,19 @@ section {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   max-width: 1000px; }
   .gallery li {
+    position: relative;
     overflow: hidden;
+    margin-bottom: 2rem;
     text-align: center;
     opacity: 1;
-    padding-top: 1rem;
-    padding-left: 1rem;
+    padding: 1rem;
     width: calc(100% - 2rem);
     -webkit-transition: 0.2s;
     transition: 0.2s;
@@ -191,6 +202,7 @@ section {
         width: calc(100%/3 - 2rem); } }
   .gallery img {
     position: relative;
+    right: 50%;
     width: 200%; }
   .gallery .li-show {
     -webkit-animation-duration: 1s;
@@ -203,14 +215,37 @@ section {
             animation-direction: normal;
     opacity: 1; }
   .gallery .li-hover:hover {
-    padding-top: 0.5rem;
-    padding-left: 0.5rem;
-    margin-right: -0.5rem;
-    margin-bottom: -0.5rem;
-    width: calc(100% - 1.5rem); }
+    padding: 0;
+    margin: 0;
+    margin-left: -0.25rem;
+    margin-top: -0.5rem;
+    max-height: 21rem;
+    width: calc(100%); }
     @media (min-width: 625px) {
       .gallery .li-hover:hover {
-        width: calc(100%/2 - 1.5rem); } }
+        width: calc(100%/2); } }
     @media (min-width: 1000px) {
       .gallery .li-hover:hover {
-        width: calc(100%/3 - 1.5rem); } }
+        width: calc(100%/3); }
+        .gallery .li-hover:hover .img-desc {
+          top: 80%; } }
+  .gallery .img-desc {
+    color: white;
+    text-align: left;
+    position: absolute;
+    padding: 0.25rem 0.5rem;
+    width: 100%;
+    height: 5rem;
+    top: 100%;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    -webkit-transition: 0.3s;
+    transition: 0.3s; }
+  .gallery .img-title {
+    margin-bottom: 0.5rem; }
+  .gallery .img-likes {
+    display: inline-block;
+    background: #222;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.25rem;
+    border: 0.05rem solid #ccc; }

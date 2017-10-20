@@ -27,7 +27,11 @@ function showImages() {
 		i++
 		setTimeout(() => {
 			let tempHTML = '<li class="li-show li-hover">'
-			tempHTML += `<img src="${image.urls['full']}"`
+			tempHTML += `<img src="${image.urls['full']}">`
+			tempHTML += '<div class="img-desc">'
+			tempHTML += `<h3 class="img-title">Posted By: ${image.user['name']}</h3>`
+			tempHTML += `<p class="img-likes">Likes: ${image.likes}</p>`
+			tempHTML += '</div>'
 			tempHTML += '</li>'
 
 			gallery.insertAdjacentHTML('beforeend', tempHTML)
