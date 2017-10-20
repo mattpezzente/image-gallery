@@ -34,6 +34,9 @@ $base-content-size: 1rem
 	0% 
 		opacity: 0
 
+	50%
+		opacity: 0
+
 	100% 
 		opacity: 1
 
@@ -89,30 +92,36 @@ section
 	max-width: $max-width
 
 	li
+		overflow: hidden
 		text-align: center
 		opacity: 1
-		padding: 1rem
+		padding-top: 1rem
+		padding-left: 1rem
 		width: calc(100% - 2rem)
 		transition: 0.2s
+		max-height: 20rem
 		@include responsive(tablet)
 			width: calc(100%/2 - 2rem)
 		@include responsive(desktop)
 			width: calc(100%/3 - 2rem)
 
 	img
-		width: 100%
+		position: relative
+		width: 200%
 
 	.li-show
 		@include galleryLoad
 		opacity: 1
 
 	.li-hover:hover
-		padding: 0
-		transition: 0.1s
-		// @include responsive(tablet)
-		// 	width: calc(100%/2)
-		// @include responsive(desktop)
-		// 	width: calc(100%/3)
-
+		padding-top: 0.5rem
+		padding-left: 0.5rem
+		margin-right: -0.5rem
+		margin-bottom: -0.5rem
+		width: calc(100% - 1.5rem)
+		@include responsive(tablet)
+			width: calc(100%/2 - 1.5rem)
+		@include responsive(desktop)
+			width: calc(100%/3 - 1.5rem)
 		
  

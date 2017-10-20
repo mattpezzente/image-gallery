@@ -3,11 +3,7 @@ let data;
 (()=> {
 
 	if (localStorage.getItem('pics') === null) {
-		//fetchUnSplash()
-		console.log('Yes Load')
-	}
-	else {
-		console.log('No Load')
+		fetchUnSplash()
 	}
 
 	setTimeout(showImages, 2000)
@@ -19,22 +15,22 @@ function fetchUnSplash() {
 	fetch(`https://api.unsplash.com/photos/?client_id=${clientID}`)
 		.then(resp => resp.json())
 		.then(resp => {
-			fetchData = window.localStorage.setItem('pics', resp)
+			fetchData = window.localStorage.setItem('pics', JSON.stringify(resp))
 		})
 }
 
-function storeData() {
-	
-}
-
 function showImages() {
-	const images = document.querySelectorAll('.gallery li')
+	const gallery = document.querySelector('.gallery')
+	const localJSON = JSON.parse(localStorage.getItem('pics'))
 	let i = 0
-	images.forEach(image => {
+	localJSON.forEach(image => {
 		i++
 		setTimeout(() => {
-			image.classList.add('li-show', 'li-hover')
-			
+			let tempHTML = '<li class="li-show li-hover">'
+			tempHTML += `<img src="${image.urls['full']}"`
+			tempHTML += '</li>'
+
+			gallery.insertAdjacentHTML('beforeend', tempHTML)
 		}, i*150)
 	})
 }
