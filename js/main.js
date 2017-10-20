@@ -17,7 +17,7 @@ function fetchUnSplash() {
 		.then(resp => resp.json())
 		.then(resp => {
 			console.log(resp)
-			setTimeout(showImages(resp), 2000)
+			setTimeout(showImages(resp), 4000)
 		})
 }
 
