@@ -26,8 +26,17 @@ blockquote
 		font-size: $base-content-size + 0.5rem
 
 h3
-	font-size: $base-content-size
+	font-size: $base-content-size - 0.125rem
+	@include responsive(tablet)
+		font-size: $base-content-size + 0.125
+	@include responsive(desktop)
+		font-size: $base-content-size
+
 
 p
 	font-family: $content-font
 	font-size: $base-content-size - 0.25rem
+	@include responsive(tablet)
+		font-size: $base-content-size + 0.125
+	@include responsive(desktop)
+		font-size: $base-content-size

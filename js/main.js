@@ -1,7 +1,6 @@
 (()=> {
 	const globe = document.querySelector('.globe')
 	fetchUnSplash()
-	setTimeout(showImages, 2000)
 	globe.addEventListener('click', clickGlobe)
 })();
 
@@ -17,19 +16,23 @@ function fetchUnSplash() {
 	fetch(`https://api.unsplash.com/photos/?client_id=${clientID}`)
 		.then(resp => resp.json())
 		.then(resp => {
-			fetchData = sessionStorage.setItem('pics', JSON.stringify(resp))
+			console.log(resp)
+			setTimeout(showImages(resp), 2000)
 		})
 }
 
-function showImages() {
+function showImages(images) {
 	const gallery = document.querySelector('.gallery')
-	const localJSON = JSON.parse(sessionStorage.getItem('pics'))
 	let i = 0
-	localJSON.forEach(image => {
+	images.forEach(image => {
 		i++
 		setTimeout(() => {
 			let tempHTML = '<li class="li-show li-hover">'
-			tempHTML += `<img src="${image.urls['full']}">`
+			tempHTML += `<img src="${image.urls['small']}"
+				srcset="${image.urls['full']} ${image.width}w, ${image.urls['regular']} 1080w, ${image.urls['small']} 400w, ${image.urls['thumb']} 200w"
+				sizes="(min-width: 200px) 100vm, (min-width: 625px) 50vw, (min-width: 1000px) 33vw"
+
+			/>`
 			tempHTML += '<div class="img-desc">'
 			tempHTML += `<h3 class="img-title">By: ${image.user['name']}</h3>`
 			tempHTML += `<p class="img-likes">Likes: ${image.likes}</p>`
