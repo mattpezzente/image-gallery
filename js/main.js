@@ -28,7 +28,7 @@ function showImages(images) {
 		i++
 		setTimeout(() => {
 			let tempHTML = '<li class="li-show li-hover">'
-			tempHTML += `<img src="${image.urls['small']}"
+			tempHTML += `<img alt="Unsplash image taken by ${image.user['name']}" src="${image.urls['small']}"
 				srcset="${image.urls['full']} ${image.width}w, ${image.urls['regular']} 1080w, ${image.urls['small']} 400w, ${image.urls['thumb']} 200w"
 				sizes="(min-width: 200px) 100vm, (min-width: 625px) 50vw, (min-width: 1000px) 33vw"
 
