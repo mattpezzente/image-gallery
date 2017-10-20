@@ -1,39 +1,33 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto|Merriweather');
 
-$base-content-font: 1rem
-$font-family: 'Roboto', sans-serif;
+$base-content-size: 1.1rem
+$header-font: 'Patua One', cursive;
+$content-font: 'Lato', sans-serif
 
-body
+h1, h2, h3, blockquote
+	font-family: $header-font
+
+h1
+	margin-bottom: 1rem
+	font-size: $base-content-size + 0.5rem
+	@include responsive(tablet)
+		font-size: $base-content-size + 0.75rem
+	@include responsive(desktop)
+		font-size: $base-content-size + 1rem
+
+blockquote
 	padding: 0 0.5rem
-
-h1,h2,h3,h4,legend
-	font-family: $font-family
-
-select, input, p, label, li
-	font-family: $font-family
-
-select
-	font-size: $base-content-font
-
-label, input, p
-	font-size: $base-content-font + 0.25rem
-
-li
-	font-size: $base-content-font
+	font-size: $base-content-size
 	@include responsive(tablet)
-		font-size: $base-content-font + 0.25rem
-
-legend
-	font-size: $base-content-font + 0.5rem
-	@include responsive(tablet)
-		font-size: $base-content-font + 0.75rem
+		padding: 0
+		font-size: $base-content-size + 0.25
+	@include responsive(desktop)
+		padding: 0
+		font-size: $base-content-size + 0.5rem
 
 h3
-	font-size: $base-content-font + 0.25rem
-	@include responsive(tablet)
-		font-size: $base-content-font + 0.5rem
+	font-size: $base-content-size
 
-h4, button
-	font-size: $base-content-font + 0.125rem
-	@include responsive(tablet)
-		font-size: $base-content-font + 0.25rem
+p
+	font-family: $content-font
+	font-size: $base-content-size - 0.25rem
