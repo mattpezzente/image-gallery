@@ -2,10 +2,14 @@
 
 This project displays the use of CSS animations for visual effect, as well as tapping into the use of the Unsplash API.
 
+## Demo
+
+[Click Here](https://salogost.github.io/image-gallery/) to run a working demo of this project.
+
 ## Functionality
 
-* Clicking on the globe at the top fires an animation on it
-* Hovering over an image enlarges, and pulls of info about the photo from Unsplash
+* Clicking on the globe at the top fires an animation on it.
+* Hovering over an image enlarges, and pulls of info about the photo from Unsplash.
 
 ## Unsplash API
 
