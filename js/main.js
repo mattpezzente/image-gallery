@@ -16,7 +16,6 @@ function fetchUnSplash() {
 	fetch(`https://api.unsplash.com/photos/?client_id=${clientID}`)
 		.then(resp => resp.json())
 		.then(resp => {
-			console.log(resp)
 			setTimeout(() => {
 				showImages(resp)
 			}, 4000)
