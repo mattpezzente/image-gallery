@@ -1,0 +1,17 @@
+@mixin responsive($size)
+  @if $size == tablet
+    @media (min-width: 625px) 
+      @content
+  @else if $size == desktop
+    @media (min-width: 1000px) 
+      @content
+
+%center-object
+	margin-left: auto
+	margin-right: auto
+
+%flex-box
+	display: flex
+	justify-content: space-between
+	flex-direction: row
+	flex-wrap: wrap
