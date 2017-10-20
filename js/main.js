@@ -42,6 +42,6 @@ function showImages(images) {
 			tempHTML += '</li>'
 
 			gallery.insertAdjacentHTML('beforeend', tempHTML)
-		}, i*150)
+		}, i*250)
 	})
 }
