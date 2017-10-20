@@ -1,14 +1,8 @@
 (()=> {
 	const globe = document.querySelector('.globe')
-
-	if (sessionStorage.getItem('pics') === null) {
-		fetchUnSplash()
-	}
-
+	fetchUnSplash()
 	setTimeout(showImages, 2000)
-
 	globe.addEventListener('click', clickGlobe)
-
 })();
 
 function clickGlobe() {
